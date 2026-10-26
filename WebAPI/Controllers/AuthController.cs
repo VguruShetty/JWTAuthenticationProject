@@ -19,6 +19,7 @@ namespace WebAPI.Controllers
                 .HashPassword(user, request.PasswordHash);
             return Ok(user);
         }
+        [HttpPost("Login")]
         public ActionResult<User?> Login([FromBody] UserDto request)
         {
             if (user.Username != request.Username)
